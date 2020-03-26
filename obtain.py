@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import json
 import subprocess
 result = subprocess.check_output("dmidecode -t memory", shell=True)
 
@@ -41,5 +41,5 @@ for itm in arr:
         if len(dev) > 0:
             dic['device'].append(dev)
 
-print(dic)
+print(json.dumps(dic))
 
