@@ -28,7 +28,9 @@ for itm in arr:
                     dev['datawidth'] = int(data.split(' ')[0])
                 elif 'Size' in line:
                     if not data.split(' ')[0].isdigit(): break
-                    dev['size'] = float(data.split(' ')[0]) / 1024.
+                    dev['size'] = int(data.split(' ')[0])
+                    if 'MB' in data:
+                        dev['size'] = dev['size']/1024
                 elif 'Type Detail' in line:
                     dev['type'] = data.strip()
                 elif 'Part Number' in line:
