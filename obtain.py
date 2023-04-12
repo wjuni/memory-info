@@ -41,5 +41,5 @@ for itm in arr:
         if len(dev) > 0:
             dic['device'].append(dev)
 
-print(json.dumps(dic))
+print(json.dumps(dic, indent=4))
 
